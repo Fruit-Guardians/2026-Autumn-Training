@@ -4,9 +4,7 @@
 
 ## 本周作业
 
-> ⚠️ **本周作业内容由 Misc 方向负责人更新，请以群内通知为准。**
->
-> 作业布置后请补写在本节，包含：作业内容、需要提交的材料（截图 / 题解 / 脚本）、截止时间。
+> 本周作业内容请参考[培训文档](https://hnusec-star.feishu.cn/wiki/U2xfwfP39iWhISkZOa4c1UtInxd?from=from_copylink)自行安排。
 
 ## 提交要求
 
