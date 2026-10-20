@@ -17,11 +17,13 @@
 ### 解题过程
 
 1. 登录 NSSCTF 打开题目，点击「开启环境」启动靶机，等待几秒后生成靶机地址。
-2. 【截图1：靶机页面】
-3. 在靶机页面按 `F12` 打开开发者工具，切换到「查看器（Inspector）」，这里展示网页完整的 HTML 源码。
+2. 【截图1】<img width="2504" height="1452" alt="图片" src="https://github.com/user-attachments/assets/02cdea55-c349-4c7f-9751-91c5dde8ebc3" />
+
+3. 尝试一下f12 在靶机页面按 `F12` 打开开发者工具，切换到「查看器（Inspector）」，这里展示网页完整的 HTML 源码
 4. 在源码区域按 `Ctrl+F` 搜索 `flag`，在 HTML 注释中发现 flag。
-5. 【截图2：源码注释中的 flag】
-6. 得到 flag：`NSSCTF{这里填你自己的flag}`
+5. 【截图2：源码注释中的 flag】<img width="2508" height="1518" alt="图片" src="https://github.com/user-attachments/assets/262c8510-594c-4212-a047-36e0d997de14" />
+
+6. 得到最后的flag
 
 ### 知识点
 
