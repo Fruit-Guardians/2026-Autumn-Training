@@ -87,13 +87,13 @@ int main()
 还是先从基础的题目入手，积累一下经验  
 #### [SWPUCTF 2022 新生赛]base64
 先查壳发现没有壳，IDA打开发现没有花指令，可以直接反编译**mian**函数，发现一个函数**SUB_124C**打开它，根据前面笔记写的关键代码，判断是BASE64  
-![](img/ScreenShot_2026-11-01_220731_505.png)
+![](.img/ScreenShot_2026-11-01_220731_505.png)
 再发现关键字节off_4018，双击它，发现有两串字符串，一个乱码，一个好像就是**标准码表**这个乱码应该就是待解密的字符串  
-![](img/ScreenShot_2026-11-01_220823_349.png)
+![](.img/ScreenShot_2026-11-01_220823_349.png)
 直接对其进行base64解码，发现并不对，上网查发现base64是有**变种**的，尝试了base16,32,urlsafe，发现urlsafe才是对的
 #### [GWCTF 2019]pyre
 打开发现是一个.pyc文件，使用**pycdc**进行反编译，得到py源文件  
-![](img/ScreenShot_2026-11-01_222605_986.png)
+![](.img/ScreenShot_2026-11-01_222605_986.png)
 主要的操作是
 for i in range(l):
     num = ((input1[i] + i) % 128 + 128) % 128  
@@ -113,7 +113,7 @@ for i in range(len(cipher)):
         cipher[i] = chr(temp + 128)  
 #### [MoeCTF 2022]ezTea
 下载后发现一个main.c文件，打开发现是最基本的TEA函数，没有发现任何变种，根据dexrypt对应写decrypt，这里sum和delta我搞晕了很久  
-![](img/ScreenShot_2026-11-01_224246_430.png)
+![](.img/ScreenShot_2026-11-01_224246_430.png)
 解密: 
 void decrypt (uint32_t* v, uint32_t* k) {     
 	uint32_t delta = 0xd33b470;                      
@@ -131,11 +131,11 @@ void decrypt (uint32_t* v, uint32_t* k) {
 不过直接把密文写入main函数。最后打印的是hex(十六进制),还需要一番转化才能成chr字符串形式
 #### [HNCTF 2022 WEEK3]What's 1n DLL?
 解包后发现一个.exe一个.dll，前一个文件发现没有壳，直接IDA代开，发现v4,enc，**但是Dll1.dll,ttt两个疑似是处理的函数却打不开**  
-![](img/ScreenShot_2026-11-01_231225_645.png)
-![](img/ScreenShot_2026-11-01_231255_840.png)
+![](.img/ScreenShot_2026-11-01_231225_645.png)
+![](.img/ScreenShot_2026-11-01_231255_840.png)
 查壳发现DL1.dll有upx壳，直接脱壳会报错，没办法，查了别人的题解发现使用**二进制编辑器打开**里面ASCII字段的值UPX被改为了UFO,改回UPX就可以了 
-![](img/ScreenShot_2026-11-01_231351_752.png)
-![](img/ScreenShot_2026-11-01_231605_364.png)
+![](.img/ScreenShot_2026-11-01_231351_752.png)
+![](.img/ScreenShot_2026-11-01_231605_364.png)
 使用IDA打开后，发现有个**ttt**，和之前打开的ttt疑似是对应的，点击发现确实存在函数，仔细看好像是**XTEA**,不过似乎有很多变化的地方，我仅能看出a1是密文的疑似指针,v9和v11应该是待操作的密文,v6是疑似加密完sum的值  
 其他的代码我都推不出来是如何和XTEA关联的，尝试无果后，没办法,又查了别人的题解脚本，不过我还没有彻底理解该脚本是如何实现对应的
-![](img/ScreenShot_2026-11-01_232539_303.png)
+![](.img/ScreenShot_2026-11-01_232539_303.png)
