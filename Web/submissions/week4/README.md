@@ -1,9 +1,18 @@
-# Web 方向
+# Web 方向 · week4
 
-本方向的**技术文档**统一维护在飞书知识库中，培训期间的知识点讲解、学习路线、环境要求与题目说明都会同步更新到该文档，请以它为准。
+> 提交目录：`Web/submissions/week4/`，本目录用于提交 2026 秋季培训 Web 方向第四周作业。
 
-📄 **[Web 技术文档](https://hnusec-star.feishu.cn/wiki/IJxqwaAjripf25kjXP0c82s3neg?from=from_copylink)**
+## 本周作业
 
-> 说明：文档由 Web 方向负责人持续更新，请大家收藏并随时留意最新内容；遇到文档中未覆盖的问题，可在培训群内提问交流。
+> 本周作业内容请参考[培训文档](https://hnusec-star.feishu.cn/wiki/U2xfwfP39iWhISkZOa4c1UtInxd?from=from_copylink)自行安排。
 
-作业提交请进入本目录下的 [`submissions/`](./submissions/)，按周次放入对应目录。
+## 提交要求
+
+- 提交文件格式仅限 `.md`。
+- 文件名统一为 `年级-方向-id-日期.md`。
+- 请将作业 PR 在本目录（`Web/submissions/week4/`）下。
+- 文档建议包含：标题与作业名称、环境与依赖、解题思路或步骤、关键代码片段、结果与总结、参考文章。
+
+---
+
+参考：[仓库根目录 README](../../../README.md) ｜ [如何 PR](../../../如何PR.md)
