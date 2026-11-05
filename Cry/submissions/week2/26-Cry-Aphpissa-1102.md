@@ -135,3 +135,34 @@ if __name__ == '__main__':
 后面要期中考了，下周肯定没戏
 
 那就下下周开始吧
+
+## 补充
+
+经高人指点，尝试for语句也可行
+
+抽空编写了代码，如下
+
+```python
+from Crypto.Util.number import *
+import gmpy2
+
+# 此处n,e,d
+
+for i in range(2, 10000):
+    if n % (pow(2, i, n) - 1) == 0:
+        print(f"爆破成功,p={pow(2, i, n) - 1}")
+        p = pow(2, i, n) - 1
+        q = n // p
+        phi=(p-1)*(q-1)
+        d=gmpy2.invert(e,phi)
+        print(f"flag={long_to_bytes(int(pow(c,d,n))).decode()}")
+        break
+else:
+    print("No solution")
+```
+
+这个写起来比多进程的简单
+
+但是实战方面的话就可能处理不了大数据了
+
+是我找的题目不够好的原因
