@@ -1,0 +1,131 @@
+# 预备知识
+## 第一节：基本工具的安装利用
+### Burp Suite
+#### 初步简易使用方法
+- 1.利用Python运行一个靶场
+- 2.访问网站，在Proxy中放行记录，进入HTTP history
+- 3.右键放行至重放模块（Repeater），修改密码测试。
+- 4.右键放行至爆破模块（Intruder），选中特殊参数值，按Add &选定攻击位置，选择好攻击类型(初步使用Sniper),在Payload中type选simple list,点Load载入字典,最后在攻击配置中点击Grep-Match配置关键字登录成功
+-5.配置完成后可点击Start Attack,结果表中有一行显示登录成功，状态码是200，其余行状态码为401，
+-6.最后将请求发回给Repeater，即可拿到flag。
+### Hackbar
+#### 顶部工具栏
+- 1.Load URL:将当前浏览器地址URL抓入Hackbar。
+- 2.Split URL:拆开URL和查询参数，便于单独改参数
+- 3.Excute:按输入框里的URL，方法，参数重新发送请求并查看响应。
+#### 请求头区
+-1.Referer：伪造来源页，绕一些只认来源的校验。
+-2.User-Agent：伪造浏览器标识，绕基于 UA 的限制或伪装成爬虫/手机。
+-3.Cookie：填当前登录态的 Cookie，让发出的请求带上身份。
+#### Encoding
+- 1.URL encode / decode：百分号编码，处理参数里的特殊字符。
+- 2.Base64 encode / decode：最常用的二进制转文本编码，常见于 Cookie、token
+- 3.Hex encode / decode：十六进制转换，看原始字节用。
+### 其他
+-dirsearch,python3+pip,vscode,liunx虚拟器均已安装，后续学习中进一步熟练掌握。
+##第二节：Liunx操作系统
+###Linux环境搭建：选用virtual box搭建虚拟机和Ubuntu系统，下好系统光盘后装入虚拟机即可
+### Linux基本命令
+##第三节：HTTP请求和响应
+-详见第一节
+# 系统语言学习
+## 第一节：编程语言
+### C语言,Python（暂略）
+### html css java
+- 1.HTML 简介及环境搭建
+-HTML标签：通常成对出现，包括开始和结束标签。例如：
+    <p>这是一个段落</p>
+    <h1>这是一个标题</h1>
+    <a href="#">这是一个超链接</a>
+- 也存在单标签，如<br><!--换行--> <hr><!--分界线--><input type="text">
+- HTML结构：通常包括<!DOCTYPE html> <html> <head> <body> 等部分，vscode中创建新文件后按一个感叹号即可生成一份html结构，可在title处更改文件名。<hr>
+- 2.常用文本标签
+    <h1>这是一个标题</h1> <!--h1标题标签，最多可至6-->
+    <p>这是一个段落</p> <!--p段落标签-->
+    <ui>  <!--无序列表元素-->        
+        <li>无序列表元素1</li>
+        <li>无序列表元素2</li>
+        <li>无序列表元素3</li>
+    </ui>
+    <ol>  <!--有序列表元素-->
+       <li>有序列表元素1</li>
+       <li>有序列表元素2</li>
+       <li>有序列表元素3</li>
+    </ol>
+    <tabel border="1">
+       <tr>  <!-- table header 列标题-->
+          <th>列标题1</th>
+          <th>列标题2</th>
+          <th>列标题3</th>
+      </tr>
+      <tr>   <!-- tabel data 元素-->
+          <td>元素11</td>
+          <td>元素12</td>
+          <td>元素13</td>
+      </tr>
+      <tr>
+           <td>元素21</td>
+           <td>元素22</td>
+           <td>元素23</td>
+      </tr>
+      <tr>
+           <td>元素31</td>
+           <td>元素32</td>
+           <td>元素33</td>
+      </tr>
+  </tabel><hr>
+- 3.HTML文本属性
+- 每个HTML元素可以具有不同的属性值。
+- 属性名称不区分大小写，属性值对大小写敏感。
+- 适用于大部分元素的属性：
+- class（定义一个或多个类名）
+- id（定义元素唯一id）
+- style（规定元素行内样式）
+- <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main">这是一个超链接</a>
+- <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main" target=" blank">这是一个超链接</a>
+- <img src="https://www.uux.cn/viewnews-113631.html" alt="该图片无法显示" width="200" height="100"> <!-- img是图片链接，alt为替代文本,width，height可规定长度高度--><hr>
+- 4.块元素和行内元素
+- 块元素：占据整行宽度，可包含其他块级元素和行内元素，常见块级元素包括div
+，p,h1,ul,ol,li,tabel,form等，常用于组织布局界面。
+- 行内元素：通常在一行内呈现，只占其所需内容的宽度。常见行内元素包括span，a
+strong,em,img,br,input等。
+- div无语义，通常用于创建网页布局结构;span用于内联样式化文本，常与CSS，JS搭配使用<hr>
+    <body>
+      <div class="nav"><!--在编辑器中如确认div种类按.nav即可创建,按#nav可创建一个id-->
+        <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main" target=" blank">这是一个超链接</a>
+        <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main" target=" blank">这是一个超链接</a>
+        <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main" target=" blank">这是一个超链接</a>
+        <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main" target=" blank">这是一个超链接</a>
+        <a href="https://github.com/Fruit-Guardians/2026-Autumn-Training/tree/main" target=" blank">这是一个超链接</a> 
+    </div><hr>
+
+    <div class="content">
+        <h1>这是一个标题</h1>
+        <p>这是一个段落</p>
+        <p>这是一个段落</p>
+        <p>这是一个段落</p>
+    </div>
+
+     <span>这是1号span标签</span>
+     <span>这是2号span标签</span>
+     <span>这是3号span标签</span>
+     <span>这是4号span标签</span><hr>
+- 5.HTML常用表单
+- form：创建表单；input：输入内容  
+    <form>
+        <label>用户名：</label><!--提供待输入内容标记-->
+        <input type="text"  placeholder="请输入用户名"><br><br><!--placeholder在用户输入内容后消失，起提示作用-->
+        <label for="pwd">密码：</label>
+        <input type="password"  id="pwd" placehoder="请输入密码"><br><br>
+        <label for=""性别： </label><!--单选-->
+        <input type="radio" name="gender">  男
+        <input type="radio" name="gender">  女<br><br>
+        <label>爱好：</label>
+        <input type="checkbox" name="hobby">唱歌<!--双选-->
+        <input type="checkbox" name="hobby">跳舞
+        <input type="checkbox" name="hobby">RAP
+        <input type="checkbox" name="hobby">篮球
+
+        <input type="submit" value="上传"><!--发送填写数据-->
+    </form>
+    <form action=""></form><!--引号中填写数据发送地址，即后端API-->
