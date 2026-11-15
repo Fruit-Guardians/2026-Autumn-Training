@@ -413,7 +413,7 @@ for i in range(1022,299,-1):
 
     n_temp=p_temp*q_temp
 
-    if n_temp<n:#验证发现猜对了，直接计入
+    if n_temp<=n:#验证发现猜对了，直接计入
         p_guess=p_temp
         q_guess=q_temp
     else:#验证发现猜错了，说明p此位为0
