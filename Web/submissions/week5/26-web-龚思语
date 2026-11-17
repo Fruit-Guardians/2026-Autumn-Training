@@ -1,0 +1,23 @@
+#[SWPUCTF 2021新生赛]gift_F12  
+-ID:sssy!  
+-方向：Web  
+-日期：2026/11/13  
+-平台/来源：NSSCTF  
+-题目名称：[SWPUCTF 2021新生赛]gift_F12（用F12打开开发者工具看看）  
+-题目链接/附件：node4.anna.nssnode.cn:27091  
+###解题思路  
+题目搜索F12为提示，F12打开开发者工具（其实我是用ctrl+shift+I打开的，为啥我的F12打不开。。。），在代码中就可以找到flag（注意格式要改成NSSCTF）  
+![alt text](image-1.png)
+###知识点  
+前端（HTML,JS）是发给浏览器，完全公开的代码，任何人打开页面，按F12键都可以查看——前端密码泄露（安全漏洞）。so敏感数据要放在后端服务器，校验逻辑在后端执行，前端只负责展示，看不到密匙  
+#[qsnctf-NO.0902]robots.txt  
+-ID:sssy！  
+-方向：web  
+-日期：2026/11/13  
+-平台/来源：QSNCTF  
+-题目名称：[qsnctf-NO.0902]robots.txt（用dirsearch扫一下路由看看）  
+-题目链接：http://challenge.qsnctf.com:51826/  
+###解题思路  
+robots.txt是搜索引擎爬虫协议，用来告诉爬虫协议哪些页面不能访问。访问/robots.txt,发现禁止访问/secret.php;打开secret.php发现密码和用户名，返回初始页面输入密码和用户名登录拿到flag  
+###知识点  
+robots.txt(爬虫协议：放在网站目录，是网站写给搜索引擎爬虫的一份说明书)仅告知爬虫，不能限制访问，容易造成路径泄露
